@@ -1,0 +1,17 @@
+@import '../../global.scss';
+
+.repos-container {
+    background-color: $white-color;
+    border-radius: 1.5rem;
+    border-bottom: .8rem solid $purple-color;
+    padding: 2rem;
+
+    &-content {
+        width: 100%;
+        position: relative;
+
+        &-title {
+            color: $purple-color;
+        }
+    }
+}
