@@ -13,16 +13,19 @@ const ProfileNumbers = ({ repos, followers, following }) => {
       id: 1,
       value: repos ?? "-",
       description: "Repositories",
+      openRoute: () => handleRoutes("/repos")
     },
     {
       id: 2,
       value: followers ?? "-",
       description: "Followers",
+      openRoute: () => handleRoutes("/followers")
     },
     {
       id: 3,
       value: following ?? "-",
       description: "Following",
+      openRoute: () => handleRoutes("/following")
     },
   ];
 

@@ -8,9 +8,6 @@ import Followers from "./pages/Followers";
 import Following from "./pages/Following";
 
 const AppRoutes = () => {
-
-  // () => window.location.reload();
-
   return (
     <Router>
       <Routes>
