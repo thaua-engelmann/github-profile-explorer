@@ -1,0 +1,28 @@
+.route {
+    width: 60rem;
+    background-color: $container-color;
+    border-bottom: 0.8rem solid $purple-color;
+    padding: 2rem;
+    position: relative;
+    border-radius: 1.5rem;
+
+    &-title {
+        color: $white-color;
+
+        span {
+            color: $purple-color;
+        }
+    }
+
+    &-list {
+        width: 100%;
+        max-height: 75vh;
+        overflow-y: scroll;
+        margin-top: 2rem;
+
+        /* width */
+        &::-webkit-scrollbar {
+            width: 0rem;
+        }
+    }
+}

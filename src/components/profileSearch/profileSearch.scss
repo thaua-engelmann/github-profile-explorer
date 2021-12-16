@@ -1,4 +1,4 @@
-@import '../../global.scss';
+@import "../../global.scss";
 
 .profile-search {
     width: 60rem;
@@ -24,11 +24,11 @@
             input {
                 width: 100%;
                 font-size: 2.5rem;
-                padding: .8rem;
+                padding: 0.8rem;
                 text-align: center;
-                border-radius: .5rem;
+                border-radius: 0.5rem;
                 color: #444;
-                transition: .5s;
+                transition: 0.5s;
             }
 
             .icon {
@@ -36,11 +36,11 @@
                 color: $white-color;
                 width: 4rem;
                 height: 4rem;
-                border-radius: .5rem;
+                border-radius: 0.5rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: .4s;
+                transition: 0.4s;
                 cursor: pointer;
 
                 &:hover {
@@ -50,4 +50,11 @@
             }
         }
     }
+}
+
+// Error message;
+.toastify {
+    font-size: 2rem;
+    background-color: $container-color;
+    color: #e74c3c;
 }

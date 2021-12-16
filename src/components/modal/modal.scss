@@ -1,0 +1,55 @@
+@import "../../global.scss";
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+
+        .modal-overlay-box {
+            animation: bounceInDown .7s;
+        }
+    }
+
+    &-box {
+        width: 50rem;
+        position: relative;
+
+        img {
+            width: 60rem;
+            border-radius: 2rem;
+        }
+
+        &-close {
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            background: $purple-color;
+            color: $white-color;
+            font-size: 3rem;
+            cursor: pointer;
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+            transition: 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
