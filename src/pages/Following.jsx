@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react';
+
+// Context;
+import { context } from "../context/context";
+
+// Components;
+import FollowingContainer from "../components/followingContainer/FollowingContainer";
 
 const Following = () => {
+
+    const ctx = useContext(context);
+
     return (
-        <div>
-            
+        <div id="followingContainer" className="followingContainer">
+            <FollowingContainer userData={ctx.userData} followings={ctx.followings} />
         </div>
     )
 }

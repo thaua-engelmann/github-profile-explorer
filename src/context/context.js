@@ -6,13 +6,19 @@ export const ContextProvider = ({children}) => {
 
     const [userData, setUserData] = useState({});
     const [repos, setRepos] = useState([]);
+    const [followers, setFollowers] = useState([]);
+    const [followings, setFollowings] = useState([]);
 
         return (
         <context.Provider value={{
             userData,
             setUserData,
             repos,
-            setRepos
+            setRepos,
+            followers,
+            setFollowers,
+            followings,
+            setFollowings
         }}>
             {children}
         </context.Provider>

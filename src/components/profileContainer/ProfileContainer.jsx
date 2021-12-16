@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 
 import "./profileContainer.scss";
 
@@ -6,43 +6,47 @@ import "./profileContainer.scss";
 import ProfilePicture from "./profilePicture/ProfilePicture";
 import ProfileDetails from "./profileDetails/ProfileDetails";
 import ProfileNumbers from "./profileNumbers/ProfileNumbers";
+import Modal from "../modal/Modal";
 
-// Context;
-import { context } from "../../context/context";
+const ProfileContainer = ({ userData }) => {
 
-const ProfileContainer = (props) => {
-  const ctx = useContext(context);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModal = () => {
+    setShowModal(true);
+  }
 
   return (
     <div className="profile-container">
-      {ctx.userData.name ? (
+      {userData.name ? (
         <React.Fragment>
           <div className="profile-container-content">
-            <div className="profile-container-content-picture">
+            <div className="profile-container-content-picture" onClick={handleModal}>
               <ProfilePicture
-                url={ctx.userData?.avatar_url}
-                alt={ctx.userData.login}
+                url={userData?.avatar_url}
+                alt={userData.login}
               />
             </div>
             <div className="profile-container-content-details">
               <ProfileDetails
-                name={ctx.userData?.name}
-                username={ctx.userData.login}
-                bio={ctx.userData?.bio}
+                name={userData?.name}
+                username={userData.login}
+                bio={userData?.bio}
               />
             </div>
             <div className="profile-container-content-numbers">
               <ProfileNumbers
-                repos={ctx.userData.public_repos}
-                followers={ctx.userData.followers}
-                following={ctx.userData.following}
+                repos={userData.public_repos}
+                followers={userData.followers}
+                following={userData.following}
               />
+            </div>
+            <div className="profile-container-content-modal">
+              <Modal userData={userData} showModal={showModal} setShowModal={setShowModal} />
             </div>
           </div>
         </React.Fragment>
-      ) : (
-        null
-      )}
+      ) : null}
     </div>
   );
 };
